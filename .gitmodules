@@ -1,6 +1,3 @@
-[submodule "kinto"]
-	path = kinto
-	url = git@github.com:rbreaves/kinto.git
 [submodule "no-mac-xkb"]
 	path = no-mac-xkb
 	url = git@github.com:sigurdsvela/no-mac-xkb.git
