@@ -1,6 +1,6 @@
 [submodule "kinto"]
 	path = kinto
-	url = https://github.com/rbreaves/kinto.git
+	url = git@github.com:rbreaves/kinto.git
 [submodule "no-mac-xkb"]
 	path = no-mac-xkb
 	url = https://github.com/sigurdsvela/no-mac-xkb
