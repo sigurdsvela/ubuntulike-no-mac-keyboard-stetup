@@ -25,7 +25,7 @@ echo "- Setup kinto; This part will be interactive!"
 sleep 2
 
 # Setup kinto
-./kinto/setup.sh
+./kinto/setup.py
 
 
 cd -
