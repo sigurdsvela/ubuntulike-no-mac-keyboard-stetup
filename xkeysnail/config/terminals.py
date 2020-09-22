@@ -1,8 +1,19 @@
 import re
 from xkeysnail.transform import *
-from "../context.py" import Context
+from .context import Context
 
-define_keymap(re.compile(Context.terminal, re.IGNORECASE),{
+define_keymap(re.compile(str(Context.terminal), re.IGNORECASE),{
+    # Clip Board
+    K("Super-C") : K("Super-C"), #clipboard passthrough
+    K("Super-V") : K("Super-V"), #clipboard passthrough
+    K("Super-X") : K("Super-X"), #clipboard passthrough
+
+    # Tab Controll
+    K("Super-M-LEFT") : K("Super-RM-LEFT"), #clipboard passthrough
+    K("Super-M-RIGHT") : K("Super-RM-RIGHT"), #Tab Controll
+    K("Super-Shift-M-LEFT") : K("Super-Shift-RM-LEFT"), #clipboard passthrough
+    K("Super-Shift-M-RIGHT") : K("Super-Shift-RM-RIGHT"), #Tab Controll
+
     # Ctrl Tab - In App Tab Switching
     K("LC-Tab") : K("LC-PAGE_DOWN"),
     K("LC-Shift-Tab") : K("LC-PAGE_UP"),

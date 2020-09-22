@@ -4,10 +4,11 @@ Description=xkeysnail
 [Service]
 Type=simple
 KillMode=process
-ExecStart=/usr/bin/sudo /bin/bash -c '~/.config/xkeysnail/xkeystart.sh'
+ExecStart=/usr/bin/sudo -H /bin/bash -c '/home/sigsve/.config/xkeysnail/xkeystart.sh'
 ExecStop=killall xkeysnail
 Restart=on-failure
 RestartSec=3
+Environment=DISPLAY=:0
 
 [Install]
 WantedBy=graphical.target

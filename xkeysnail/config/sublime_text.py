@@ -1,6 +1,6 @@
 import re
 from xkeysnail.transform import *
-from "../context.py" import Context
+from .context import Context
 
 define_keymap(re.compile("Sublime_text", re.IGNORECASE),{
     K("Super-Space"): K("C-Space"),             # Basic code completion

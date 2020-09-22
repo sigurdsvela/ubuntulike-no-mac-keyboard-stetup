@@ -37,15 +37,15 @@ if [ ! -e "~/.xprofile" ]; then
   echo "$LINE" > ~/.xprofile
 fi
 grep -qF -- "$LINE" ~/.xprofile || echo "$LINE" >> ~/.xprofile
-/bin/bash $LINE # Exec now so reboot not required
+$LINE # Exec now so reboot not required
 
 # -- CREATE XKEYSANIL CONFIG DIR --
 mkdir -p ~/.config/
-ln -s $DIR/xkeysnail-config ~/.config/xkeysnail
+ln -fs $DIR/xkeysnail ~/.config/xkeysnail
 
 # -- CREATE XKEYSNAIL SERVICE --
 service=/etc/systemd/system
-sudo ln -s $DIR/xkeysnail.service $service/xkeysnail.service && echo "Created soft symlink..." || echo "Failed to create soft symlink..."
+sudo ln -fs $DIR/xkeysnail.service $service/xkeysnail.service && echo "Created soft symlink..." || echo "Failed to create soft symlink..."
 sudo chown -R root:root $service/xkeysnail.service && echo "Ownership set for root..." || echo "Failed to set ownership..."
 sudo chmod 644 $service/xkeysnail.service && echo "Permissions set to 644..." || echo "Failed to set permissions..."
 

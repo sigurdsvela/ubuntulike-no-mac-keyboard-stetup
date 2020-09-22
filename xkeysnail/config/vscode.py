@@ -1,21 +1,9 @@
 import re
 from xkeysnail.transform import *
-from "../context.py" import Context
-
-
-# Keybindings for Nautilus
-define_keymap(re.compile(Context.nautilus, re.IGNORECASE),{
-    K("RC-Up"): K("M-Up"),          # Go Up dir
-    K("RC-Down"): K("M-Down"),      # Go Down dir
-    K("RC-Left"): K("M-Left"),      # Go Back
-    K("RC-Right"): K("M-Right"),    # Go Forward
-})
-
-
-
+from .context import Context
 
 # Keybindings for VS Code
-define_keymap(re.compile(Context.vscode, re.IGNORECASE),{
+define_keymap(re.compile(str(Context.vscode), re.IGNORECASE),{
     # Wordwise remaining - for VS Code
     # Alt-F19 hack fixes Alt menu activation
     K("M-Left"): [K("M-F19"),K("C-Left")],                  # Left of Word

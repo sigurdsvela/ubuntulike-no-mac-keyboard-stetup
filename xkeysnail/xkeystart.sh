@@ -17,7 +17,9 @@ else
 	xkeyfullpath=`which xkeysnail`
 fi
 
-"$xkeyfullpath" --quiet --watch $DIR/config.py &
+
+(sleep 3; setxkbmap -layout "no_mac(basic)") &
+"$xkeyfullpath" --quiet --watch $DIR/config.py
 
 # inotifywait -m -e close_write,moved_to,create,modify /tmp/kinto/xkeysnail |
 
